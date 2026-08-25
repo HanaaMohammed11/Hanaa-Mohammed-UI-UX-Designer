@@ -166,11 +166,11 @@ export const projects = [
     role: "UX/UI Case Study",
     tools: ["Figma"],
     cover:
-      "https://mir-s3-cdn-cf.behance.net/projects/404/515d97248344235.Y3JvcCw4MDgsNjMyLDAsMA.png",
+      new URL("../assets/cover.webp", import.meta.url).href,
     gallery: [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/515d97248344235.69cf89c3eb79e.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/65c822248344235.69cf89c3eab33.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8e6c70248344235.69cf89c3ea1c9.png",
+      new URL("../assets/1.webp", import.meta.url).href,
+      new URL("../assets/2.webp", import.meta.url).href,
+      new URL("../assets/3.webp", import.meta.url).href,
     ],
     behanceUrl:
       "https://www.behance.net/gallery/248344235/DIASYTI-APP-The-Folk-Exchange-(UXUI-Case-Study)",
