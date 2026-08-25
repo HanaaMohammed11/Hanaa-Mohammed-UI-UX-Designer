@@ -1,13 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { HashRouter } from 'react-router-dom'
-import App from '@/App.jsx'
-import '@/index.css'
+import App from './App.jsx'
+import './index.css'
+
+window.addEventListener('unhandledrejection', (event) => {
+  if (event.reason?.message?.includes('fetch') || event.reason?.status === 405) {
+    event.preventDefault();
+  }
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <App />
   </React.StrictMode>
 )
