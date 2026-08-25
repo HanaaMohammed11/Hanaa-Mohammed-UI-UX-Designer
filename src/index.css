@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Abril+Fatface:wght@400&family=Architects+Daughter:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --desk: 201 52% 66%;
+    --ink: 0 0% 6%;
+    --paper: 0 0% 99%;
+    --yellow: 50 100% 64%;
+    --teal: 173 57% 39%;
+    --red: 13 76% 61%;
+    --blue: 217 100% 61%;
+    --pink: 0 84% 82%;
+    --green: 145 63% 42%;
+
+    --background: 201 52% 66%;
+    --foreground: 0 0% 6%;
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 6%;
+    --primary: 0 0% 6%;
+    --primary-foreground: 0 0% 99%;
+    --secondary: 50 100% 64%;
+    --secondary-foreground: 0 0% 6%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 30%;
+    --accent: 50 100% 64%;
+    --accent-foreground: 0 0% 6%;
+    --destructive: 13 76% 61%;
+    --destructive-foreground: 0 0% 99%;
+    --border: 0 0% 6%;
+    --input: 0 0% 6%;
+    --ring: 0 0% 6%;
+    --radius: 0.25rem;
+    --font-heading: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground font-body;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  ::selection { background: hsl(var(--yellow)); color: hsl(var(--ink)); }
+  :focus-visible { outline: 3px solid hsl(var(--blue)); outline-offset: 2px; border-radius: 2px; }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-color: hsl(var(--desk));
+    background-image:
+      linear-gradient(hsl(0 0% 100% / 0.45) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 100% / 0.45) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .grid-bg-bright {
+    background-image:
+      linear-gradient(hsl(var(--ink) / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--ink) / 0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .ink { color: hsl(var(--ink)); }
+  .chunk { box-shadow: 5px 5px 0 hsl(var(--ink)); }
+  .chunk-sm { box-shadow: 3px 3px 0 hsl(var(--ink)); }
+  .chunk-lg { box-shadow: 8px 8px 0 hsl(var(--ink)); }
+  .border-ink { border-color: hsl(var(--ink)); }
+  .bg-yellow { background-color: hsl(var(--yellow)); }
+  .bg-teal { background-color: hsl(var(--teal)); }
+  .bg-red { background-color: hsl(var(--red)); }
+  .bg-blue { background-color: hsl(var(--blue)); }
+  .bg-pink { background-color: hsl(var(--pink)); }
+  .bg-green { background-color: hsl(var(--green)); }
+  .bg-paper { background-color: hsl(var(--paper)); }
+  .bg-desk { background-color: hsl(var(--desk)); }
+  .bg-ink { background-color: hsl(var(--ink)); }
+  .text-paper { color: hsl(var(--paper)); }
+  .text-ink { color: hsl(var(--ink)); }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .canvas-scroll::-webkit-scrollbar { width: 10px; height: 10px; }
+  .canvas-scroll::-webkit-scrollbar-track { background: hsl(0 0% 6% / 0.05); }
+  .canvas-scroll::-webkit-scrollbar-thumb { background: hsl(0 0% 6%); border: 2px solid hsl(0 0% 99%); border-radius: 2px; }
+  .dot-grid {
+    background-image: radial-gradient(hsl(0 0% 6% / 0.18) 1.4px, transparent 1.4px);
+    background-size: 22px 22px;
+  }
+  .pixel-corners { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+}
+
+@media (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
+  body.custom-cursor-active input,
+  body.custom-cursor-active textarea {
+    cursor: text !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
