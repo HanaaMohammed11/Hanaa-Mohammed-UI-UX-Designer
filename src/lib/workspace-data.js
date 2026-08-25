@@ -168,14 +168,14 @@ export const projects = [
     cover:
       "https://mir-s3-cdn-cf.behance.net/projects/404/515d97248344235.Y3JvcCw4MDgsNjMyLDAsMA.png",
     gallery: [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0b10c3248344235.69ef94af33344.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8d4707248344235.69f77f979a61d.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/a46404248344235.69f77f97992f7.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0b10c3248344235.69ef94af33344.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8d4707248344235.69f77f979a61d.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a46404248344235.69f77f97992f7.jpg",
     ],
     behanceUrl:
       "https://www.behance.net/gallery/248344235/DIASYTI-APP-The-Folk-Exchange-(UXUI-Case-Study)",
     description:
-      "A UX/UI case study inspired by the Egyptian cultural reference of \"\u0628\u0633\u0646\u062a \u0648\u062f\u064a\u0627\u0633\u0637\u064a\" and the idea of collective purchasing and understanding real market prices.",
+      "A UX/UI case study inspired by the Egyptian cultural reference of \"بسنت ودياستي\" and the idea of collective purchasing and understanding real market prices.",
     tags: ["Mobile", "Cultural", "Case Study"],
     accent: "teal",
     appreciations: 108,
@@ -203,7 +203,7 @@ export const projects = [
     behanceUrl:
       "https://www.behance.net/gallery/253243205/Captain-Cash-The-Future-of-Financial-Literacy-for-Kids",
     description:
-      "A collaborative project exploring financial education for children through gamification \u2014 adventures, interactive challenges, saving, budgeting and responsible spending.",
+      "A collaborative project exploring financial education for children through gamification — adventures, interactive challenges, saving, budgeting and responsible spending.",
     tags: ["Fintech", "Gamification", "Kids"],
     accent: "red",
     appreciations: 75,
@@ -230,7 +230,7 @@ export const projects = [
     ],
     behanceUrl: "https://www.behance.net/gallery/252272755/LAMMA-Inspired-by-El-Aroosa-Tea",
     description:
-      "A conceptual UX/UI case study inspired by Egyptian social gatherings, traditional games, caf\u00e9s, dominoes, backgammon, competitions, memories and the cultural identity of El Aroosa Tea.",
+      "A conceptual UX/UI case study inspired by Egyptian social gatherings, traditional games, cafés, dominoes, backgammon, competitions, memories and the cultural identity of El Aroosa Tea.",
     tags: ["Mobile", "Social", "Cultural"],
     accent: "yellow",
     appreciations: 28,
