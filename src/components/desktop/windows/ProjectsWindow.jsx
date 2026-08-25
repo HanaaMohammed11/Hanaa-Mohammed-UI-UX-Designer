@@ -1,8 +1,18 @@
+"use client";
+
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { projects, ACCENTS, flatImg } from "@/lib/atelier-data";
 
-const dot = { blue: "bg-blue", red: "bg-red", yellow: "bg-yellow", teal: "bg-teal", pink: "bg-pink", green: "bg-green", ink: "bg-[hsl(var(--ink))]" };
+const dot = {
+  blue: "bg-blue",
+  red: "bg-red",
+  yellow: "bg-yellow",
+  teal: "bg-teal",
+  pink: "bg-pink",
+  green: "bg-green",
+  ink: "bg-[hsl(var(--ink))]",
+};
 
 export default function ProjectsWindow() {
   const [open, setOpen] = useState(null);
@@ -54,16 +64,36 @@ export default function ProjectsWindow() {
             >
               <div className={`flex items-center justify-between px-3 py-1.5 ${ACCENTS[p.accent]} border-b-2 border-ink`}>
                 <span className="font-mono text-[11px] font-bold uppercase tracking-wide">{p.label}.case</span>
-                <button onClick={() => setOpen(null)} className="grid h-5 w-5 place-items-center rounded-full border-2 border-ink bg-paper text-[9px] font-bold hover:bg-red hover:text-paper">✕</button>
+                <button
+                  onClick={() => setOpen(null)}
+                  className="grid h-5 w-5 place-items-center rounded-full border-2 border-ink bg-paper text-[9px] font-bold hover:bg-red hover:text-paper"
+                >
+                  ✕
+                </button>
               </div>
               <div className="p-4">
-                <div className="h-28 overflow-hidden rounded-md border-2 border-ink">
-                  <img src={flatImg} alt="Project sketches" className="h-full w-full object-cover" loading="lazy" />
+                {/* عرض صورة الغلاف أو أول صورة من الجاليري الخاصة بالمشروع */}
+                <div className="h-32 overflow-hidden rounded-md border-2 border-ink bg-paper">
+                  <img
+                    src={p.cover || (p.gallery && p.gallery[0]) || flatImg}
+                    alt={p.label}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = flatImg; // استخدام flatImg إذا فشل تحميل رابط Behance
+                    }}
+                  />
                 </div>
-                <p className="mt-3 font-display text-lg font-bold italic leading-tight" style={{ color: "hsl(var(--blue))" }}>{p.question}</p>
-                <p className="mt-1 font-mono text-[10px] uppercase tracking-wide text-ink/55">{p.year} · {p.role}</p>
+
+                <p className="mt-3 font-display text-lg font-bold italic leading-tight" style={{ color: "hsl(var(--blue))" }}>
+                  {p.question}
+                </p>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-wide text-ink/55">
+                  {p.year} · {p.role}
+                </p>
                 <ol className="mt-3 space-y-2">
-                  {p.story.map((s, i) => (
+                  {p.story?.map((s, i) => (
                     <li key={s.stage} className="flex gap-2">
                       <span className="font-mono text-[10px] font-bold text-ink/40">0{i + 1}</span>
                       <div>
@@ -74,8 +104,10 @@ export default function ProjectsWindow() {
                   ))}
                 </ol>
                 <div className="mt-3 flex flex-wrap gap-1 border-t-2 border-dashed border-ink/30 pt-2">
-                  {p.peek.map((x) => (
-                    <span key={x} className="rounded-full border border-ink px-2 py-0.5 font-mono text-[9px] text-ink/65">{x}</span>
+                  {p.peek?.map((x) => (
+                    <span key={x} className="rounded-full border border-ink px-2 py-0.5 font-mono text-[9px] text-ink/65">
+                      {x}
+                    </span>
                   ))}
                 </div>
               </div>
