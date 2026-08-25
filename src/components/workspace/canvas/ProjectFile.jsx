@@ -131,19 +131,32 @@ export default function ProjectFile({ projectId, onClose, reduced }) {
           }
 
           {/* gallery */}
-          <div className="mt-5">
-            <div className="mb-2 flex items-center justify-between">
-              <h3 className="font-mono text-[11px] font-bold uppercase tracking-wide text-ink">The Experience</h3>
-              <Annotation text="this one survived 14 revisions." />
-            </div>
-            <div className="grid gap-3">
-              {p.gallery.map((g, i) =>
-              <div key={i} className="overflow-hidden rounded-md border-2 border-ink bg-muted">
-                  <img src={g} alt={`${p.title} preview ${i + 1}`} loading="lazy" className="w-full object-cover" />
-                </div>
-              )}
-            </div>
-          </div>
+     
+<div className="mt-5">
+  <div className="mb-2 flex items-center justify-between">
+    <h3 className="font-mono text-[11px] font-bold uppercase tracking-wide text-ink">The Experience</h3>
+    <Annotation text="this one survived 14 revisions." />
+  </div>
+  <div className="grid gap-3">
+    {p.gallery.map((g, i) => {
+ 
+      const imageSrc = typeof g === "string" && !g.startsWith("http") 
+        ? new URL(`../../assets/${g.replace(/^\/?(assets\/|images\/)?/, "")}`, import.meta.url).href
+        : g;
+
+      return (
+        <div key={i} className="overflow-hidden rounded-md border-2 border-ink bg-muted">
+          <img 
+            src={imageSrc} 
+            alt={`${p.title} preview ${i + 1}`} 
+            loading="lazy" 
+            className="w-full object-cover" 
+          />
+        </div>
+      );
+    })}
+  </div>
+</div>
 
           {/* single primary CTA + secondary back */}
           <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t-2 border-dashed border-ink/30 pt-4">
