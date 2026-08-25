@@ -72,9 +72,10 @@ export default function ProjectsWindow() {
                 </button>
               </div>
               <div className="p-4">
-                {/* عرض صورة الغلاف أو أول صورة من الجاليري الخاصة بالمشروع */}
+          
                 <div className="h-32 overflow-hidden rounded-md border-2 border-ink bg-paper">
                   <img
+                  referrerPolicy="no-referrer"
                     src={p.cover || (p.gallery && p.gallery[0]) || flatImg}
                     alt={p.label}
                     className="h-full w-full object-cover"
