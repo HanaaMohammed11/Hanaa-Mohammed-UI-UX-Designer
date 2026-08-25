@@ -90,22 +90,21 @@ export default function ContactCanvas() {
               className="resize-none rounded-md border-2 border-ink bg-paper px-2 py-1.5 font-mono text-[12px] text-ink outline-none focus:bg-yellow"
             />
           </label>
-
-          <AnimatePresence>
+<AnimatePresence>
             {error && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="flex items-center gap-2 rounded-md border-2 border-ink bg-red/90 p-2 chunk-sm text-paper"
+                className="flex items-center gap-2.5 rounded-md border-2 border-ink bg-red-600 p-2.5 shadow-sm"
               >
                 <img
                   src={ja3farImg}
                   alt="Ja3far angry"
-                  className="h-8 w-8 object-contain"
-                  style={{ filter: "drop-shadow(1px 1px 0 hsl(0 0% 6%))" }}
+                  className="h-8 w-8 object-contain shrink-0"
+                  style={{ filter: "drop-shadow(1px 1px 0 #000)" }}
                 />
-                <span className="font-mono text-[10px] font-bold">
+                <span className="font-mono text-[11px] font-extrabold leading-snug text-white">
                   {error}
                 </span>
               </motion.div>
@@ -221,7 +220,7 @@ export default function ContactCanvas() {
         </div>
 
         {/* Ja3far Easter egg */}
-        <div className="mt-3 flex items-center gap-2 rounded-md border-2 border-dashed border-ink/40 p-2">
+        <div className="mt-3 flex items-center gap-2 rounded-md border-2 border-dashed border-ink/40 p-2 ">
           <img
             src={ja3farImg}
             alt="Ja3far reviewing"
