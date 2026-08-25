@@ -168,7 +168,9 @@ export const projects = [
     cover:
       "https://mir-s3-cdn-cf.behance.net/projects/404/515d97248344235.Y3JvcCw4MDgsNjMyLDAsMA.png",
     gallery: [
- "https://mir-s3-cdn-cf.behance.net/projects/404/515d97248344235.Y3JvcCw4MDgsNjMyLDAsMA.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0b10c3248344235.69ef94af33344.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8d4707248344235.69f77f979a61d.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a46404248344235.69f77f97992f7.jpg",
     ],
     behanceUrl:
       "https://www.behance.net/gallery/248344235/DIASYTI-APP-The-Folk-Exchange-(UXUI-Case-Study)",
