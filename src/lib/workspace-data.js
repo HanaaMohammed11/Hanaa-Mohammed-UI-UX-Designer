@@ -196,9 +196,9 @@ export const projects = [
     cover:
       "https://mir-s3-cdn-cf.behance.net/projects/404/de528a253243205.Y3JvcCw4MDgsNjMyLDAsMA.png",
     gallery: [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/73142f253243205.6a650271790ba.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/20f8e9253243205.6a65027179a03.png",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c94d6c253243205.6a64b4cfe491e.png",
+  new URL("../assets/1.png", import.meta.url).href,
+      new URL("../assets/2.png", import.meta.url).href,
+      new URL("../assets/3.png", import.meta.url).href,
     ],
     behanceUrl:
       "https://www.behance.net/gallery/253243205/Captain-Cash-The-Future-of-Financial-Literacy-for-Kids",
