@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Home as HomeIcon, FolderOpen, Sparkles, Mail, User, Workflow } from "lucide-react";
-import { useIsMobile } from "@/lib/useIsMobile";
-import { useReducedMotion } from "@/lib/useReducedMotion";
-import { projects } from "@/lib/workspace-data";
+import { useIsMobile } from "../lib/useIsMobile";
+import { useReducedMotion } from "../lib/useReducedMotion";
+import { projects } from "../lib/workspace-data";
 
-import TopBar from "@/components/workspace/TopBar";
-import LeftPanel from "@/components/workspace/LeftPanel";
-import RightPanel from "@/components/workspace/RightPanel";
-import ToolDock from "@/components/workspace/ToolDock";
-import CursorLayer from "@/components/workspace/CursorLayer";
-import Ja3far from "@/components/workspace/Ja3far";
+import TopBar from "../components/workspace/TopBar";
+import LeftPanel from "../components/workspace/LeftPanel";
+import RightPanel from "../components/workspace/RightPanel";
+import ToolDock from "../components/workspace/ToolDock";
+import CursorLayer from "../components/workspace/CursorLayer";
+import Ja3far from "../components/workspace/Ja3far";
 
-import HeroFrame from "@/components/workspace/canvas/HeroFrame";
-import AboutCanvas from "@/components/workspace/canvas/AboutCanvas";
-import ProjectsCanvas from "@/components/workspace/canvas/ProjectsCanvas";
-import ProjectFile from "@/components/workspace/canvas/ProjectFile";
-import ProcessCanvas from "@/components/workspace/canvas/ProcessCanvas";
-import PlaygroundCanvas from "@/components/workspace/canvas/PlaygroundCanvas";
-import ContactCanvas from "@/components/workspace/canvas/ContactCanvas";
+import HeroFrame from "../components/workspace/canvas/HeroFrame";
+import AboutCanvas from "../components/workspace/canvas/AboutCanvas";
+import ProjectsCanvas from "../components/workspace/canvas/ProjectsCanvas";
+import ProjectFile from "../components/workspace/canvas/ProjectFile";
+import ProcessCanvas from "../components/workspace/canvas/ProcessCanvas";
+import PlaygroundCanvas from "../components/workspace/canvas/PlaygroundCanvas";
+import ContactCanvas from "../components/workspace/canvas/ContactCanvas";
 
 const MOBILE_NAV = [
   { id: "home", label: "Home", icon: HomeIcon },
@@ -92,7 +92,6 @@ export default function Home() {
 
   const handleCanvasToolClick = (e) => {
     if (!["comment", "text", "pen"].includes(activeTool)) return;
-    // Don't create artifact when clicking on interactive elements
     if (e.target.closest("button, a, input, textarea, [data-frame]")) return;
 
     const rect = e.currentTarget.getBoundingClientRect();
@@ -151,7 +150,7 @@ export default function Home() {
             cursor: ["comment", "text", "pen"].includes(activeTool) ? "crosshair" : activeTool === "hand" ? "grab" : undefined,
           }}
         >
-          {/* Tool artifacts overlay — ephemeral notes/comments/doodles */}
+          {/* Tool artifacts overlay */}
           <div className="pointer-events-none sticky top-0 z-20" style={{ height: 0 }}>
             <div className="absolute" style={{ left: 0, top: 0, right: 0, height: "100vh" }}>
               <AnimatePresence>
@@ -237,7 +236,7 @@ export default function Home() {
         />
       )}
 
-      {/* Ja3far — persistent studio mascot */}
+      {/* Ja3far mascot */}
       <Ja3far
         activePage={activePage}
         reduced={reduced}
