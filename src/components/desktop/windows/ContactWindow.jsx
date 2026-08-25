@@ -14,7 +14,7 @@ export default function ContactWindow() {
 
       <div className="mt-3 space-y-2">
         {[
-          { label: "Email", value: "hello@atelier.studio", href: "mailto:hello@atelier.studio", icon: "✉", accent: "bg-blue text-paper" },
+          { label: "Email", value: "hello@atelier.studio", href: "mailto:hanaamohammedali2@gmail.com", icon: "✉", accent: "bg-blue text-paper" },
           { label: "Instagram", value: "@atelier.questions", href: "https://instagram.com", icon: "◎", accent: "bg-pink text-ink" },
           { label: "Résumé", value: "download .pdf", href: "#", icon: "▤", accent: "bg-teal text-paper" },
           { label: "LinkedIn", value: "/in/atelier", href: "https://linkedin.com", icon: "◈", accent: "bg-red text-paper" },
