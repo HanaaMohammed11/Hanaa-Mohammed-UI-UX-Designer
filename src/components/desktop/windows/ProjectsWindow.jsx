@@ -81,7 +81,7 @@ export default function ProjectsWindow() {
                     loading="lazy"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = flatImg; // استخدام flatImg إذا فشل تحميل رابط Behance
+                      e.target.src = flatImg;
                     }}
                   />
                 </div>
