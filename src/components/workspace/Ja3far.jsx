@@ -181,7 +181,7 @@ export default function Ja3far({ activePage, reduced, hoveringProject, isMobile 
             src={ja3farImg}
             alt="Ja3far — studio mascot"
             className={`${sizeClass} object-contain`}
-            style={{ filter: "drop-shadow(2px 2px 0 hsl(0 0% 6%))" }}
+            style={{ filter: "drop-shadow(2px 2px 0 hsl(0 0% 6%)) radius(50%)" }}
           />
           {sleepy && (
             <motion.span
