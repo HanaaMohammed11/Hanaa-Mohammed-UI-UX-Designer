@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 
 function Paw({ state, pressed }) {
   const spread = state === "grab" ? 1.35 : 1;
@@ -27,7 +26,6 @@ function Paw({ state, pressed }) {
     </svg>
   );
 }
-
 
 const QUIET_LABELS = new Set(["CANVAS"]);
 
@@ -93,8 +91,7 @@ export default function CursorLayer({ reduced }) {
     };
   }, []);
 
-  if (reduced) return null;
-
+  if (reduced || !visible || pos.x < 0) return null;
   const offset = 18;
   const labelW = 90;
   const labelH = 22;
@@ -114,12 +111,13 @@ export default function CursorLayer({ reduced }) {
 
   return (
     <>
-
+      {/* Paw Cursor */}
       <div
         aria-hidden
         className="pointer-events-none fixed z-[1000] hidden md:block"
         style={{
-          transform: `translate(${pos.x - 12}px, ${pos.y - 12}px)`,
+          left: `${pos.x - 12}px`,
+          top: `${pos.y - 12}px`,
           opacity: visible ? 1 : 0,
           transition: "opacity 120ms",
         }}
@@ -127,14 +125,14 @@ export default function CursorLayer({ reduced }) {
         <Paw state={pawState} pressed={pressed} />
       </div>
 
+      {/* Label Tooltip */}
       {showLabel && (
-        <motion.div
+        <div
           aria-hidden
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
           className="pointer-events-none fixed z-[1000] hidden md:block"
           style={{
-            transform: `translate(${dx}px, ${dy}px)`,
+            left: `${dx}px`,
+            top: `${dy}px`,
             opacity: visible ? 1 : 0,
             transition: "opacity 120ms",
           }}
@@ -142,7 +140,7 @@ export default function CursorLayer({ reduced }) {
           <span className="whitespace-nowrap rounded border-2 border-ink bg-yellow px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide text-ink shadow-solid">
             {labelText}
           </span>
-        </motion.div>
+        </div>
       )}
     </>
   );
