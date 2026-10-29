@@ -41,7 +41,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/hanaa-mohammed-5b9384369/",
   email: "hanaamohammedali2@gmail.com",
   cvUrl:
-    "../assets/Hanaa Mohammed-UIUX-CV.pdf",
+    "./assets/Hanaa-Mohammed-UIUX-CV.pdf",
   cvSummary:
     "UI/UX Designer specialized in building scalable, high-fidelity products and intuitive user journeys through design systems and structural precision.",
   tools: ["Figma", "Canva", "Illustrator", "Photoshop", "Design Thinking"],
