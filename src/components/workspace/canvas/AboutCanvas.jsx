@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { profile, portraitImg } from "@/lib/workspace-data";
 import Frame from "@/components/workspace/Frame";
+import cvFile from "@/assets/Hanaa-Mohammed-UIUX-CV.pdf";
 import Sticker from "@/components/workspace/Sticker";
 import Annotation from "@/components/workspace/Annotation";
 
@@ -108,7 +109,7 @@ export default function AboutCanvas({ onSelect }) {
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="max-w-xl text-[13px] leading-relaxed text-ink">{profile.cvSummary}</p>
             <a
-              href={profile.cvUrl}
+              href={cvFile}
               target="_blank"
               rel="noreferrer"
               data-cursor="OPEN CV ↗"
